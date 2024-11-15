@@ -1,0 +1,139 @@
+
+
+.studentlgbutton {
+	position: relative;
+	width: 268px;
+	height: 132px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #404040;
+	background-color: #84BEEF;
+	background-image: url(../images/bg_white.gif);
+	background-repeat: repeat-x;
+	background-position: bottom right;
+	float: left;
+	}
+	
+ /* BUTTON IN TOP ROW OF NAVIGATION */ 
+.exploration a {
+	display: block;
+	float: left;
+	width: 111px;
+	height: 112px;
+	line-height: normal;
+	margin: 10px 0px 10px 5px;
+	border: 0px;
+	border-style: solid;
+	background-image: url(../images/btn_exploration.gif);
+	background-repeat: no-repeat;
+	color: #404040;
+	}
+	
+.exploration a:hover {
+	display: block;
+	float: left;
+	width: 111px;
+	height: 112px;
+	line-height: normal;
+	margin: 10px 0px 10px 5px;
+	border: 0px;
+	border-style: solid;
+	background-image: url(../images/btn_exploration_over.gif);
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	text-align: center;
+	}
+	
+.exploration_dwn a {
+	display: block;
+	float: left;
+	width: 111px;
+	height: 112px;
+	line-height: normal;
+	margin: 10px 0px 10px 5px;
+	border: 0px;
+	border-style: solid;
+	background-image: url(../images/btn_exploration_dwn.gif);
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	text-align: center;
+	}
+
+.mytasks a {
+	display: block;
+	float: left;
+	width: 111px;
+	height: 112px;
+	line-height: normal;
+	margin: 10px 0px 10px 5px;
+	border: 0px;
+	border-style: solid;
+	background-image: url(../images/btn_tasks.gif);
+	background-repeat: no-repeat;
+	color: #404040;
+	}
+	
+.mytasks a:hover {
+	display: block;
+	float: left;
+	width: 111px;
+	height: 112px;
+	line-height: normal;
+	margin: 10px 0px 10px 5px;
+	border: 0px;
+	border-style: solid;
+	background-image: url(../images/btn_tasks_over.gif);
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	text-align: center;
+	}
+	
+.mytasks_dwn a {
+	display: block;
+	float: left;
+	width: 111px;
+	height: 112px;
+	line-height: normal;
+	margin: 10px 0px 10px 5px;
+	border: 0px;
+	border-style: solid;
+	background-image: url(../images/btn_tasks_dwn.gif);
+	background-repeat: no-repeat;
+	color: #FFFFFF;
+	text-align: center;
+	}
+	
+	
+.studentheader {
+	position: relative;
+	width: 500px;
+	height: 132px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #404040;
+	background-color: #84BEEF;
+	background-image: url(../images/bg_studenttasks.gif);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	float: left;
+	}
+	
+.studentexp {
+	position: relative;
+	width: 500px;
+	height: 132px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: #404040;
+	background-color: #84BEEF;
+	background-image: url(../images/bg_studentexp.gif);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	float: left;
+	}

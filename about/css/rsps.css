@@ -1,0 +1,30 @@
+/*
+responsive design, by zheng ning
+*/
+.row{
+	width:100%;
+}
+/* wide, big screen */
+@media(min-width:1200px){
+	/*  */
+	/*  */
+	/*  */
+	/*  */
+	/*  */
+	/*  */
+}
+@media(min-width:500px)and(min-width:1199px){
+	/*  */
+}
+/* narrow, small screen */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/* responsive */
