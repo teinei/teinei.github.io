@@ -1,7 +1,15 @@
 .aboutimg2{
-	background-image: url(../img/shirtlessJoe.png);
+	/* background-image: url(../../img/shirtlessJoe.png);*/
 	/* width:500px;*/
 	height:450px;
 	background-size: 50%;
 	background-repeat: no-repeat;
+	text-align:center;
+}
+img{
+	height:450px;
+	/*text-align:center;*/
+}
+.btn{
+	padding-right:7px;
 }
