@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USHERWORLD | Official</title>
+<style>
+/* 全局复刻Usher官网基础样式：纯黑、硬朗、大写、粗体、无圆角 */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial Black',Helvetica,sans-serif;text-transform:uppercase}
+body{background:#000;color:#ffffff;line-height:1.7;font-weight:700;overflow-x:hidden}
+/* 导航栏：复刻Usher顶部黑条、粗边框、硬朗布局 */
+header{position:fixed;top:0;width:100%;background:#000;border-bottom:3px solid #222;z-index:9999;padding:0 40px}
+nav{display:flex;justify-content:space-between;align-items:center;height:70px}
+/* Logo：复刻Usher粗体硬朗标识 */
+.logo{font-size:24px;font-weight:900;letter-spacing:4px;color:#fff;text-decoration:none}
+/* 桌面端导航：全大写、硬朗间距、hover金属高亮 */
+.nav-links{display:flex;gap:45px;list-style:none}
+.nav-links li a{color:#bbbbbb;text-decoration:none;font-size:14px;font-weight:800;letter-spacing:2px;transition:0.3s ease}
+.nav-links li a:hover{color:#fff;letter-spacing:3px;border-bottom:2px solid #fff;padding-bottom:4px}
+/* 汉堡按钮：复刻粗线条macho硬朗图标 */
+.hamburger{display:none;cursor:pointer;font-size:32px;font-weight:900;color:#fff;line-height:1;user-select:none}
+/* 首屏大图区：1:1复刻Usher全屏硬汉人物banner */
+.hero{margin-top:70px;width:100%;height:calc(100vh - 70px);background:url('https://i.imgur.com/9Z7X7yY.jpg') center/cover no-repeat;background-color:#0a0a0a;display:flex;align-items:center;justify-content:center;border-bottom:3px solid #222}
+.hero-text{text-align:center;color:#fff;letter-spacing:6px}
+.hero-text h1{font-size:52px;font-weight:900;margin-bottom:15px}
+.hero-text p{font-size:18px;font-weight:700;opacity:0.8}
+/* 移动端适配：完全复刻Usher移动端汉堡菜单逻辑 */
+@media(max-width:768px){
+.nav-links{
+  position:absolute;top:70px;left:0;width:100%;background:#050505;
+  flex-direction:column;padding:40px;gap:30px;
+  display:none;/* 默认隐藏 */
+  border-top:3px solid #222;
+  box-shadow:0 12px 30px rgba(0,0,0,0.9);
+}
+.nav-links.active{display:flex}
+.hamburger{display:block}
+.hero-text h1{font-size:32px}
+header{padding:0 20px}
+}
+</style>
+</head>
+<body>
+<!-- 导航栏（复刻Usher顶部导航文字） -->
+<header>
+  <nav>
+    <a href="#" class="logo">USHER</a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Tour</a></li>
+      <li><a href="#">Music</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">☰</div>
+  </nav>
+</header>
+
+<!-- 首屏大图+文字（1:1复刻Usher硬汉视觉） -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Past Present Future</h1>
+    <p>Official Usher World Tour & Merchandise</p>
+  </div>
+</section>
+
+<!-- 汉堡菜单交互：完整修复+复刻Usher切换逻辑 -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
+
+// 汉堡/叉号切换+菜单展开收起
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+});
+
+// 点击导航链接自动关闭菜单（Usher官网原生逻辑）
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.textContent = '☰';
+  });
+});
+</script>
+</body>
+</html>
