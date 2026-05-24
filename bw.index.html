@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Site | Macho Style Close to Usher Page</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial Black',sans-serif}
+body{background:#0a0a0a;color:#fff;line-height:1.6}
+header{background:#000;padding:1rem 2rem;position:sticky;top:0;z-index:999;border-bottom:2px solid #222}
+nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.8rem;font-weight:900;letter-spacing:2px;color:#fff;text-decoration:none}
+/* 桌面端菜单 */
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:#ddd;text-decoration:none;font-weight:700;font-size:1rem;text-transform:uppercase;transition:0.3s}
+.nav-links a:hover{color:#fff;letter-spacing:1px}
+/* 汉堡按钮 更macho硬朗粗线条 */
+.hamburger{display:none;cursor:pointer;font-size:2rem;font-weight:900;color:#fff;line-height:1;user-select:none}
+/* 移动端 */
+@media(max-width:768px){
+.nav-links{
+  position:absolute;top:100%;left:0;width:100%;background:#050505;
+  flex-direction:column;padding:2rem;gap:1.5rem;
+  display:none;/* 默认隐藏 */
+  border-top:2px solid #222;
+  box-shadow:0 10px 20px #000;
+}
+.nav-links.active{display:flex}
+.hamburger{display:block}
+}
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="#" class="logo">YOUR BRAND</a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">☰</div>
+  </nav>
+</header>
+
+<script>
+// 汉堡菜单 完整交互 修复版 + macho风格适配
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links a');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  // 切换 汉堡/叉号
+  hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+});
+
+// 点击链接自动关闭菜单
+navItems.forEach(item => {
+  item.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.textContent = '☰';
+  });
+});
+</script>
+</body>
+</html>
