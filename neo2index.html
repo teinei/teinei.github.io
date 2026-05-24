@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ARTIST NAME | Official Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#050505',
+            primary: '#d400ff',
+            secondary: '#00f0ff',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-gradient {
+        background: linear-gradient(90deg, #d400ff, #00f0ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .bg-blur {
+        backdrop-filter: blur(8px);
+      }
+    }
+  </style>
+</head>
+<body class="bg-dark text-white font-sans">
+
+<!-- 导航栏（已修复移动端菜单） -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/70 bg-blur">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative">
+    <a href="#" class="text-2xl font-bold text-gradient">ARTIST</a>
+
+    <!-- 桌面菜单 -->
+    <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+      <a href="#tour" class="hover:text-primary transition">Tour</a>
+      <a href="#music" class="hover:text-primary transition">Music</a>
+      <a href="#merch" class="hover:text-primary transition">Merch</a>
+      <a href="#contact" class="hover:text-primary transition">Contact</a>
+    </div>
+
+    <!-- 汉堡按钮 -->
+    <button id="menuBtn" class="md:hidden text-2xl">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- 移动端下拉菜单 -->
+    <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-black/95 py-6 px-4 flex flex-col gap-6 text-center text-sm uppercase tracking-widest">
+      <a href="#tour" class="hover:text-primary transition">Tour</a>
+      <a href="#music" class="hover:text-primary transition">Music</a>
+      <a href="#merch" class="hover:text-primary transition">Merch</a>
+      <a href="#contact" class="hover:text-primary transition">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero 首屏 -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1583328665212-0e8a85017f7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-40"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-dark"></div>
+  <div class="relative z-10 text-center px-4">
+    <h1 class="text-[clamp(3rem,10vw,7rem)] font-black text-gradient uppercase">ARTIST NAME</h1>
+    <p class="text-xl md:text-2xl mt-4 text-gray-300">Official Website • World Tour 2026</p>
+    <a href="#tour" class="inline-block mt-8 px-8 py-4 rounded-full border border-primary text-primary hover:bg-primary hover:text-black transition font-bold uppercase tracking-wider">
+      View Tour Dates
+    </a>
+  </div>
+</section>
+
+<!-- 巡演 Tour -->
+<section id="tour" class="py-24 px-4 max-w-6xl mx-auto">
+  <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-12 text-center uppercase">Tour Dates 2026</h2>
+  <div class="space-y-4">
+    <div class="border border-gray-800 p-6 rounded-xl hover:border-primary transition flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <div class="text-primary font-bold">JUN 26, 2026</div>
+        <div class="text-xl font-semibold">Denver, USA</div>
+        <div class="text-gray-400">Empower Field Stadium</div>
+      </div>
+      <a href="#" class="px-6 py-3 bg-primary text-black rounded-full font-bold hover:opacity-80 transition">Get Tickets</a>
+    </div>
+    <div class="border border-gray-800 p-6 rounded-xl hover:border-primary transition flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <div class="text-primary font-bold">AUG 11, 2026</div>
+        <div class="text-xl font-semibold">Toronto, Canada</div>
+        <div class="text-gray-400">Rogers Centre</div>
+      </div>
+      <a href="#" class="px-6 py-3 bg-primary text-black rounded-full font-bold hover:opacity-80 transition">Get Tickets</a>
+    </div>
+    <div class="border border-gray-800 p-6 rounded-xl hover:border-primary transition flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <div class="text-primary font-bold">SEP 25, 2026</div>
+        <div class="text-xl font-semibold">Los Angeles, USA</div>
+        <div class="text-gray-400">SoFi Stadium</div>
+      </div>
+      <a href="#" class="px-6 py-3 bg-primary text-black rounded-full font-bold hover:opacity-80 transition">Get Tickets</a>
+    </div>
+  </div>
+</section>
+
+<!-- 音乐 Music -->
+<section id="music" class="py-24 px-4 bg-black/40">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-12 text-center uppercase">Latest Music</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-dark p-6 rounded-xl border border-gray-800 hover:border-primary transition">
+        <div class="aspect-square bg-gray-800 rounded-lg mb-4"></div>
+        <h3 class="text-xl font-bold">Single Title</h3>
+        <p class="text-gray-400">Released 2026</p>
+      </div>
+      <div class="bg-dark p-6 rounded-xl border border-gray-800 hover:border-primary transition">
+        <div class="aspect-square bg-gray-800 rounded-lg mb-4"></div>
+        <h3 class="text-xl font-bold">Album Name</h3>
+        <p class="text-gray-400">Out Now</p>
+      </div>
+      <div class="bg-dark p-6 rounded-xl border border-gray-800 hover:border-primary transition">
+        <div class="aspect-square bg-gray-800 rounded-lg mb-4"></div>
+        <h3 class="text-xl font-bold">Remix EP</h3>
+        <p class="text-gray-400">Streaming Everywhere</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 周边 Merch -->
+<section id="merch" class="py-24 px-4 max-w-6xl mx-auto">
+  <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-12 text-center uppercase">Official Merch</h2>
+  <div class="grid md:grid-cols-4 gap-6">
+    <div class="bg-black/40 p-4 rounded-xl">
+      <div class="aspect-square bg-gray-800 rounded mb-3"></div>
+      <p class="font-semibold">Tour Tee</p>
+      <p class="text-primary">$45</p>
+    </div>
+    <div class="bg-black/40 p-4 rounded-xl">
+      <div class="aspect-square bg-gray-800 rounded mb-3"></div>
+      <p class="font-semibold">Hoodie</p>
+      <p class="text-primary">$85</p>
+    </div>
+    <div class="bg-black/40 p-4 rounded-xl">
+      <div class="aspect-square bg-gray-800 rounded mb-3"></div>
+      <p class="font-semibold">Cap</p>
+      <p class="text-primary">$35</p>
+    </div>
+    <div class="bg-black/40 p-4 rounded-xl">
+      <div class="aspect-square bg-gray-800 rounded mb-3"></div>
+      <p class="font-semibold">Poster</p>
+      <p class="text-primary">$25</p>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer id="contact" class="py-12 bg-black border-t border-gray-800">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <div class="flex justify-center gap-6 text-2xl mb-6">
+      <a href="#" class="hover:text-primary"><i class="fa fa-instagram"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fa fa-spotify"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fa fa-youtube-play"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fa fa-twitter"></i></a>
+    </div>
+    <p class="text-gray-500 text-sm">© 2026 ARTIST NAME. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- 移动端菜单JS（核心修复） -->
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuLinks = mobileMenu.querySelectorAll('a');
+
+// 切换显示/隐藏
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  // 切换图标 汉堡/关闭
+  const icon = menuBtn.querySelector('i');
+  icon.classList.toggle('fa-bars');
+  icon.classList.toggle('fa-times');
+});
+
+// 点击导航链接自动关闭菜单
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    const icon = menuBtn.querySelector('i');
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  });
+});
+</script>
+
+</body>
+</html>
