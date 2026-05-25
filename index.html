@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#111;color:#fff}
+
+/* Full screen loading overlay */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Hide loader after animation */
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Spinner animation */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255,255,255,0.2);
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.load-text {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #cbd5e1;
+}
+
+/* Main page content (hidden while loading) */
+#content {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#content.show {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loader">
+  <div class="spinner"></div>
+  <div class="load-text">LOADING...</div>
+</div>
+
+<!-- Main Page Content -->
+<div id="content">
+  <h1>Welcome to My Website</h1>
+  <p>Content loaded successfully</p>
+</div>
+
+<script>
+// Loader auto‑hide after 2 seconds
+window.addEventListener('load', function() {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+    document.getElementById('content').classList.add('show');
+  }, 2000);
+});
+</script>
+
+</body>
+</html>
