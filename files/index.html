@@ -10,52 +10,54 @@
 </script>
 
   <link href="https://teinei.github.io/files/jo.css" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            dark: 'black',
-            primary: 'aqua',
-            secondary: 'red',
-          },
-          fontFamily: {
-custom: ['MyCostomFont', 'sans-serif'],
+  
 
-           // sans: ['Inter', 'sans-serif'],
-          },
-        }
-      }
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        dark: 'black',
+        primary: 'aqua',
+        secondary: 'red',
+      },
+      fontFamily: {
+        // 名字統一：MyCustomFont
+        sans: ['MyCustomFont', 'sans-serif'],
+      },
     }
-  </script>
-  <style type="text/tailwindcss">
+  }
+}
+</script>
 
-
-
-@font-face {
-  font-family: "MyCustomFont";
-  src: url("fonts/HaloHandletter.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+<style type="text/tailwindcss">
+@layer base {
+  @font-face {
+    font-family: "MyCustomFont";
+    src: url("./fonts/HaloHandletter.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* 強制全站套用 */
+  body {
+    font-family: "MyCustomFont", sans-serif !important;
+  }
 }
 
-/* 全部網站套用 */
-body {
-  font-family: "MyCustomFont", sans-serif !important;
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(90deg, #d400ff, #00f0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bg-blur {
+    backdrop-filter: blur(8px);
+  }
 }
+</style>
 
 
-    @layer utilities {
-      .text-gradient {
-        background: linear-gradient(90deg, #d400ff, #00f0ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .bg-blur {
-        backdrop-filter: blur(8px);
-      }
-    }
-  </style>
+
 </head>
 <body class="bg-dark text-white font-sans">
 
