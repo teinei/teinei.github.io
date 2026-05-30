@@ -31,6 +31,16 @@ tailwind.config = {
 </script>
 
 <style type="text/tailwindcss">
+
+.disabled-email {
+      color: #888888;
+      text-decoration: none;
+      cursor: not-allowed;
+      opacity: 0.6;
+      pointer-events: none;     /* This makes it NOT clickable */
+    }
+
+
 @layer base {
   @font-face {
     font-family: "MyCustomFont";
@@ -303,7 +313,7 @@ Hex color converter
       <a href="https://soundcloud.com/seikojo" class="hover:text-primary">
         <i class="fa-brands fa-soundcloud"></i></a>
     </div>
-    <p class="text-gray-500 text-sm">
+    <p class="disable-email text-gray-500 text-sm">
       e-mail: teinei@yahoo.com
     </p>
     <p class="text-gray-500 text-sm">© 2026 Bare Torsoed. All Rights Reserved.</p>
