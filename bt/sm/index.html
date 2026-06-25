@@ -93,16 +93,14 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative">
     <a href="#" class="text-2xl font-bold text-gradient">Bare Torsoed</a>
 
-    <!-- 桌面菜单 -->
+    <!-- desktop menu, 桌面菜单 -->
     <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-      <a href="#tour" class="hover:text-primary transition">Tour</a>
       <a href="#music" class="hover:text-primary transition">Music</a>
-      <a href="#merch" class="hover:text-primary transition">Merch</a>
       <a href="#contact" class="hover:text-primary transition">Contact</a>
       <a href="#tools" class="hover:text-primary transition">Tools</a>
     </div>
 
-    <!-- 汉堡按钮 -->
+    <!-- burger menu for mobile, 汉堡按钮 -->
     <button id="menuBtn" class="md:hidden text-2xl">
       <i class="fa fa-bars"></i>
     </button>
@@ -111,8 +109,12 @@ tailwind.config = {
     <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-black/95 py-6 px-4 flex flex-col gap-6 text-center text-sm uppercase tracking-widest">
       <br>
       <a href="#tour" class="hover:text-primary transition">Tour</a>
+      
+      <!--
       <a href="#music" class="hover:text-primary transition">Music</a>
       <a href="#merch" class="hover:text-primary transition">Merch</a>
+      -->
+      
       <a href="#contact" class="hover:text-primary transition">Contact</a>
       <a href="#tools" class="hover:text-primary transition">Tools</a>
 
