@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>HEX2COLOR 顏色轉換器</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui}
+body{background:#f5f5f5;padding:30px;max-width:550px;margin:0 auto}
+.box{background:#fff;padding:25px;border-radius:12px;box-shadow:0 2px 12px #00000015}
+h2{text-align:center;margin-bottom:20px;color:#333}
+.row{margin:14px 0}
+label{display:block;margin-bottom:6px;color:#555}
+input,select{width:100%;padding:10px 12px;border:1px #ddd solid;border-radius:6px;font-size:16px}
+#preview{width:100%;height:130px;border-radius:8px;margin:20px 0;border:1px #eee solid}
+.info{background:#f8f8f8;padding:12px;border-radius:6px;margin-top:10px;line-height:1.8}
+.tip{font-size:13px;color:#888;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>HTML Color ↔ HEX ↔ RGB ↔ HSL 轉換器</h2>
+
+<!-- 手動輸入HTML顏色名稱 -->
+<div class="row">
+<label>✏️ 輸入HTML顏色英文名</label>
+<input id="colorName" type="text" placeholder="例如：red、skyblue、gold、tomato">
+<div class="tip">可直接輸入英文顏色名自動轉換</div>
+</div>
+
+<!-- 下拉快速選擇 -->
+<div class="row">
+<label>🎨 快速選擇HTML Color</label>
+<select id="htmlColorSelect">
+<option value="">請選擇顏色</option>
+<option value="#000000">Black 黑色</option>
+<option value="#C0C0C0">Silver 銀灰</option>
+<option value="#808080">Gray 灰色</option>
+<option value="#FFFFFF">White 白色</option>
+<option value="#800000">Maroon 棗紅</option>
+<option value="#FF0000">Red 純紅</option>
+<option value="#800080">Purple 紫色</option>
+<option value="#FF00FF">Fuchsia 紫紅</option>
+<option value="#008000">Green 深綠</option>
+<option value="#00FF00">Lime 亮綠</option>
+<option value="#808000">Olive 橄欖黃</option>
+<option value="#FFFF00">Yellow 純黃</option>
+<option value="#000080">Navy 藏青</option>
+<option value="#0000FF">Blue 純藍</option>
+<option value="#008080">Teal 青綠</option>
+<option value="#00FFFF">Aqua 天青</option>
+<option value="#CD5C5C">IndianRed 印度紅</option>
+<option value="#F08080">LightCoral 淺珊瑚紅</option>
+<option value="#FA8072">Salmon 鮭魚紅</option>
+<option value="#E9967A">DarkSalmon 暗鮭紅</option>
+<option value="#FFA07A">LightSalmon 淺橙紅</option>
+<option value="#DC143C">Crimson 緋紅</option>
+<option value="#B22222">FireBrick 磚紅</option>
+<option value="#8B0000">DarkRed 暗紅</option>
+<option value="#FF4500">OrangeRed 橙紅</option>
+<option value="#FF6347">Tomato 番茄紅</option>
+<option value="#FF8C00">DarkOrange 深橙</option>
+<option value="#FFA500">Orange 橙色</option>
+<option value="#FFD700">Gold 金色</option>
+<option value="#F0E68C">Khaki 卡其色</option>
+<option value="#BDB76B">DarkKhaki 深卡其</option>
+<option value="#9ACD32">YellowGreen 黃綠</option>
+<option value="#7CFC00">LawnGreen 草坪綠</option>
+<option value="#7FFF00">Chartreuse 萊姆黃綠</option>
+<option value="#ADFF2F">GreenYellow 嫩黃綠</option>
+<option value="#006400">DarkGreen 墨綠</option>
+<option value="#228B22">ForestGreen 森林綠</option>
+<option value="#2E8B57">SeaGreen 海綠</option>
+<option value="#3CB371">MediumSeaGreen 中海綠</option>
+<option value="#20B2AA">LightSeaGreen 淺海綠</option>
+<option value="#00FF7F">SpringGreen 春綠</option>
+<option value="#00FA9A">MediumSpringGreen 中春綠</option>
+<option value="#98FB98">PaleGreen 淺嫩綠</option>
+<option value="#90EE90">LightGreen 淺綠</option>
+<option value="#008B8B">DarkCyan 深青</option>
+<option value="#40E0D0">Turquoise 綠松石</option>
+<option value="#48D1CC">MediumTurquoise 中松石</option>
+<option value="#00CED1">DarkTurquoise 深松石</option>
+<option value="#5F9EA0">CadetBlue 軍藍</option>
+<option value="#4682B4">SteelBlue 鋼藍</option>
+<option value="#6495ED">CornflowerBlue 矢車菊藍</option>
+<option value="#00BFFF">DeepSkyBlue 深天藍</option>
+<option value="#87CEEB">SkyBlue 天藍</option>
+<option value="#87CEFA">LightSkyBlue 淺天藍</option>
+<option value="#1E90FF">DodgerBlue 道奇藍</option>
+<option value="#4169E1">RoyalBlue 寶藍</option>
+<option value="#0000CD">MediumBlue 中藍</option>
+<option value="#00008B">DarkBlue 深藍</option>
+<option value="#191970">MidnightBlue 午夜藍</option>
+<option value="#E6E6FA">Lavender 薰衣草紫</option>
+<option value="#D8BFD8">Thistle 薊紫</option>
+<option value="#DDA0DD">Plum 梅子紫</option>
+<option value="#EE82EE">Violet 堇紫</option>
+<option value="#DA70D6">Orchid 蘭紫</option>
+<option value="#BA55D3">MediumOrchid 中蘭紫</option>
+<option value="#9932CC">DarkOrchid 深蘭紫</option>
+<option value="#9400D3">DarkViolet 暗堇紫</option>
+<option value="#4B0082">Indigo 靛藍</option>
+<option value="#FF00FF">Magenta 洋紅</option>
+<option value="#FF69B4">HotPink 艷粉</option>
+<option value="#FF1493">DeepPink 深粉</option>
+<option value="#DB7093">PaleVioletRed 淺紫紅</option>
+<option value="#C71585">MediumVioletRed 中紫紅</option>
+<option value="#A0522D">Sienna 赭石棕</option>
+<option value="#D2691E">Chocolate 巧克力棕</option>
+<option value="#CD853F">Peru 土黃棕</option>
+<option value="#F4A460">SandyBrown 沙棕</option>
+<option value="#DEB887">BurlyWood 原木色</option>
+<option value="#F5DEB3">Wheat 麥色</option>
+<option value="#D2B48C">Tan 棕褐色</option>
+<option value="#BC8F8F">RosyBrown 玫瑰棕</option>
+<option value="#DCDCDC">Gainsboro 淺銀灰</option>
+<option value="#D3D3D3">LightGray 淺灰</option>
+<option value="#A9A9A9">DarkGray 深灰</option>
+<option value="#696969">DimGray 暗灰</option>
+<option value="#708090">SlateGray 石板灰</option>
+<option value="#778899">LightSlateGray 淺石板灰</option>
+<option value="#2F4F4F">DarkSlateGray 深石板灰</option>
+</select>
+</div>
+
+<div class="row">
+<label>HEX 色碼</label>
+<input id="hex" type="text" placeholder="#00bfff" value="#00bfff">
+</div>
+
+<div class="row">
+<label>RGB</label>
+<input id="rgb" type="text" readonly>
+</div>
+
+<div class="row">
+<label>HSL</label>
+<input id="hsl" type="text" readonly>
+</div>
+
+<div id="preview"></div>
+
+<div class="info">
+HTML Color：<span id="nameText">deepskyblue</span><br>
+HEX：<span id="hexText">#00bfff</span><br>
+RGB：<span id="rgbText">rgb(0,191,255)</span><br>
+HSL：<span id="hslText">hsl(195,100%,50%)</span>
+</div>
+</div>
+
+<script>
+const hexInput = document.getElementById('hex');
+const rgbInput = document.getElementById('rgb');
+const hslInput = document.getElementById('hsl');
+const colorNameInput = document.getElementById('colorName');
+const htmlSelect = document.getElementById('htmlColorSelect');
+const preview = document.getElementById('preview');
+const nameText = document.getElementById('nameText');
+const hexText = document.getElementById('hexText');
+const rgbText = document.getElementById('rgbText');
+const hslText = document.getElementById('hslText');
+
+// 建立HTML顏色名稱 ↔ HEX映射表
+const colorMap = {
+  black:'#000000',silver:'#C0C0C0',gray:'#808080',white:'#FFFFFF',
+  maroon:'#800000',red:'#FF0000',purple:'#800080',fuchsia:'#FF00FF',
+  green:'#008000',lime:'#00FF00',olive:'#808000',yellow:'#FFFF00',
+  navy:'#000080',blue:'#0000FF',teal:'#008080',aqua:'#00FFFF',
+  indianred:'#CD5C5C',lightcoral:'#F08080',salmon:'#FA8072',darksalmon:'#E9967A',
+  lightsalmon:'#FFA07A',crimson:'#DC143C',firebrick:'#B22222',darkred:'#8B0000',
+  orangered:'#FF4500',tomato:'#FF6347',darkorange:'#FF8C00',orange:'#FFA500',
+  gold:'#FFD700',khaki:'#F0E68C',darkkhaki:'#BDB76B',yellowgreen:'#9ACD32',
+  lawngreen:'#7CFC00',chartreuse:'#7FFF00',greenyellow:'#ADFF2F',darkgreen:'#006400',
+  forestgreen:'#228B22',seagreen:'#2E8B57',mediumseagreen:'#3CB371',lightseagreen:'#20B2AA',
+  springgreen:'#00FF7F',mediumspringgreen:'#00FA9A',palegreen:'#98FB98',lightgreen:'#90EE90',
+  darkcyan:'#008B8B',turquoise:'#40E0D0',mediumturquoise:'#48D1CC',darkturquoise:'#00CED1',
+  cadetblue:'#5F9EA0',steelblue:'#4682B4',cornflowerblue:'#6495ED',deepskyblue:'#00BFFF',
+  skyblue:'#87CEEB',lightskyblue:'#87CEFA',dodgerblue:'#1E90FF',royalblue:'#4169E1',
+  mediumblue:'#0000CD',darkblue:'#00008B',midnightblue:'#191970',lavender:'#E6E6FA',
+  thistle:'#D8BFD8',plum:'#DDA0DD',violet:'#EE82EE',orchid:'#DA70D6',
+  mediumorchid:'#BA55D3',darkorchid:'#9932CC',darkviolet:'#9400D3',indigo:'#4B0082',
+  magenta:'#FF00FF',hotpink:'#FF69B4',deeppink:'#FF1493',palevioletred:'#DB7093',
+  mediumvioletred:'#C71585',sienna:'#A0522D',chocolate:'#D2691E',peru:'#CD853F',
+  sandybrown:'#F4A460',burlywood:'#DEB887',wheat:'#F5DEB3',tan:'#D2B48C',
+  rosybrown:'#BC8F8F',gainsboro:'#DCDCDC',lightgray:'#D3D3D3',darkgray:'#A9A9A9',
+  dimgray:'#696969',slategray:'#708090',lightslategray:'#778899',darkslategray:'#2F4F4F'
+};
+
+// HEX轉RGB
+function hexToRgb(hex) {
+  let r = parseInt(hex.slice(1,3),16);
+  let g = parseInt(hex.slice(3,5),16);
+  let b = parseInt(hex.slice(5,7),16);
+  return {r,g,b};
+}
+
+// RGB轉HSL
+function rgbToHsl(r,g,b){
+  r/=255;g/=255;b/=255;
+  let max=Math.max(r,g,b),min=Math.min(r,g,b);
+  let h,s,l=(max+min)/2;
+  if(max===min){h=s=0;}
+  else{
+    let d=max-min;
+    s=l>0.5?d/(2-max-min):d/(max+min);
+    switch(max){
+      case r:h=((g-b)/d+(g<b?6:0))/6;break;
+      case g:h=((b-r)/d+2)/6;break;
+      case b:h=((r-g)/d+4)/6;break;
+    }
+  }
+  return {h:Math.round(h*360),s:Math.round(s*100),l:Math.round(l*100)};
+}
+
+// 透過顏色名稱取得HEX
+function nameToHex(name){
+  let n = name.trim().toLowerCase();
+  return colorMap[n] || null;
+}
+
+// 更新所有顯示
+function updateColor(sourceHex, sourceName=""){
+  if(!/^#[0-9A-Fa-f]{6}$/.test(sourceHex))return;
+  let rgb=hexToRgb(sourceHex);
+  let hsl=rgbToHsl(rgb.r,rgb.g,rgb.b);
+
+  preview.style.backgroundColor=sourceHex;
+  hexInput.value=sourceHex;
+  rgbInput.value=`rgb(${rgb.r},${rgb.g},${rgb.b})`;
+  hslInput.value=`hsl(${hsl.h},${hsl.s}%,${hsl.l}%)`;
+
+  hexText.textContent=sourceHex;
+  rgbText.textContent=rgbInput.value;
+  hslText.textContent=hslInput.value;
+
+  if(sourceName){
+    colorNameInput.value=sourceName;
+    nameText.textContent=sourceName;
+  }else{
+    nameText.textContent="custom";
+  }
+}
+
+// 1. 輸入HTML顏色名稱觸發轉換
+colorNameInput.addEventListener('input',()=>{
+  let name = colorNameInput.value;
+  let hex = nameToHex(name);
+  if(hex){
+    updateColor(hex,name.toLowerCase());
+    htmlSelect.value="";
+  }
+});
+
+// 2. 下拉選擇顏色
+htmlSelect.addEventListener('change',()=>{
+  let hex = htmlSelect.value;
+  if(hex){
+    updateColor(hex);
+    colorNameInput.value="";
+  }
+});
+
+// 3. 手動輸入HEX
+hexInput.addEventListener('input',()=>{
+  updateColor(hexInput.value);
+  colorNameInput.value="";
+  htmlSelect.value="";
+});
+
+// 初始預設顏色
+updateColor('#00bfff','deepskyblue');
+</script>
+</body>
+</html>
