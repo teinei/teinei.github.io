@@ -63,6 +63,109 @@ Color Converter
 <div class="result">HSL: <span id="resHsl"></span></div>
 </div>
 
+<!-- 手動輸入HTML顏色名稱 -->
+<div class="row">
+<label>✏️ 輸入HTML顏色英文名</label>
+<input id="colorName" type="text" placeholder="例如：red、skyblue、gold、tomato">
+<div class="tip">可直接輸入英文顏色名自動轉換</div>
+</div>
+
+<!-- 下拉快速選擇 -->
+<div class="row">
+<label>🎨 快速選擇HTML Color</label>
+<select id="htmlColorSelect">
+<option value="">請選擇顏色</option>
+<option value="#000000">Black 黑色</option>
+<option value="#C0C0C0">Silver 銀灰</option>
+<option value="#808080">Gray 灰色</option>
+<option value="#FFFFFF">White 白色</option>
+<option value="#800000">Maroon 棗紅</option>
+<option value="#FF0000">Red 純紅</option>
+<option value="#800080">Purple 紫色</option>
+<option value="#FF00FF">Fuchsia 紫紅</option>
+<option value="#008000">Green 深綠</option>
+<option value="#00FF00">Lime 亮綠</option>
+<option value="#808000">Olive 橄欖黃</option>
+<option value="#FFFF00">Yellow 純黃</option>
+<option value="#000080">Navy 藏青</option>
+<option value="#0000FF">Blue 純藍</option>
+<option value="#008080">Teal 青綠</option>
+<option value="#00FFFF">Aqua 天青</option>
+<option value="#CD5C5C">IndianRed 印度紅</option>
+<option value="#F08080">LightCoral 淺珊瑚紅</option>
+<option value="#FA8072">Salmon 鮭魚紅</option>
+<option value="#E9967A">DarkSalmon 暗鮭紅</option>
+<option value="#FFA07A">LightSalmon 淺橙紅</option>
+<option value="#DC143C">Crimson 緋紅</option>
+<option value="#B22222">FireBrick 磚紅</option>
+<option value="#8B0000">DarkRed 暗紅</option>
+<option value="#FF4500">OrangeRed 橙紅</option>
+<option value="#FF6347">Tomato 番茄紅</option>
+<option value="#FF8C00">DarkOrange 深橙</option>
+<option value="#FFA500">Orange 橙色</option>
+<option value="#FFD700">Gold 金色</option>
+<option value="#F0E68C">Khaki 卡其色</option>
+<option value="#BDB76B">DarkKhaki 深卡其</option>
+<option value="#9ACD32">YellowGreen 黃綠</option>
+<option value="#7CFC00">LawnGreen 草坪綠</option>
+<option value="#7FFF00">Chartreuse 萊姆黃綠</option>
+<option value="#ADFF2F">GreenYellow 嫩黃綠</option>
+<option value="#006400">DarkGreen 墨綠</option>
+<option value="#228B22">ForestGreen 森林綠</option>
+<option value="#2E8B57">SeaGreen 海綠</option>
+<option value="#3CB371">MediumSeaGreen 中海綠</option>
+<option value="#20B2AA">LightSeaGreen 淺海綠</option>
+<option value="#00FF7F">SpringGreen 春綠</option>
+<option value="#00FA9A">MediumSpringGreen 中春綠</option>
+<option value="#98FB98">PaleGreen 淺嫩綠</option>
+<option value="#90EE90">LightGreen 淺綠</option>
+<option value="#008B8B">DarkCyan 深青</option>
+<option value="#40E0D0">Turquoise 綠松石</option>
+<option value="#48D1CC">MediumTurquoise 中松石</option>
+<option value="#00CED1">DarkTurquoise 深松石</option>
+<option value="#5F9EA0">CadetBlue 軍藍</option>
+<option value="#4682B4">SteelBlue 鋼藍</option>
+<option value="#6495ED">CornflowerBlue 矢車菊藍</option>
+<option value="#00BFFF">DeepSkyBlue 深天藍</option>
+<option value="#87CEEB">SkyBlue 天藍</option>
+<option value="#87CEFA">LightSkyBlue 淺天藍</option>
+<option value="#1E90FF">DodgerBlue 道奇藍</option>
+<option value="#4169E1">RoyalBlue 寶藍</option>
+<option value="#0000CD">MediumBlue 中藍</option>
+<option value="#00008B">DarkBlue 深藍</option>
+<option value="#191970">MidnightBlue 午夜藍</option>
+<option value="#E6E6FA">Lavender 薰衣草紫</option>
+<option value="#D8BFD8">Thistle 薊紫</option>
+<option value="#DDA0DD">Plum 梅子紫</option>
+<option value="#EE82EE">Violet 堇紫</option>
+<option value="#DA70D6">Orchid 蘭紫</option>
+<option value="#BA55D3">MediumOrchid 中蘭紫</option>
+<option value="#9932CC">DarkOrchid 深蘭紫</option>
+<option value="#9400D3">DarkViolet 暗堇紫</option>
+<option value="#4B0082">Indigo 靛藍</option>
+<option value="#FF00FF">Magenta 洋紅</option>
+<option value="#FF69B4">HotPink 艷粉</option>
+<option value="#FF1493">DeepPink 深粉</option>
+<option value="#DB7093">PaleVioletRed 淺紫紅</option>
+<option value="#C71585">MediumVioletRed 中紫紅</option>
+<option value="#A0522D">Sienna 赭石棕</option>
+<option value="#D2691E">Chocolate 巧克力棕</option>
+<option value="#CD853F">Peru 土黃棕</option>
+<option value="#F4A460">SandyBrown 沙棕</option>
+<option value="#DEB887">BurlyWood 原木色</option>
+<option value="#F5DEB3">Wheat 麥色</option>
+<option value="#D2B48C">Tan 棕褐色</option>
+<option value="#BC8F8F">RosyBrown 玫瑰棕</option>
+<option value="#DCDCDC">Gainsboro 淺銀灰</option>
+<option value="#D3D3D3">LightGray 淺灰</option>
+<option value="#A9A9A9">DarkGray 深灰</option>
+<option value="#696969">DimGray 暗灰</option>
+<option value="#708090">SlateGray 石板灰</option>
+<option value="#778899">LightSlateGray 淺石板灰</option>
+<option value="#2F4F4F">DarkSlateGray 深石板灰</option>
+</select>
+</div>
+
 <script>
 const hexIn = document.getElementById('hex');
 const rgbIn = document.getElementById('rgb');
