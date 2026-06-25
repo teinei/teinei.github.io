@@ -1,0 +1,368 @@
+ html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bare Torsoed | Official Website</title>
+  <script src="https://teinei.github.io/files/jo.js"></script>
+  <script src="https://teinei.github.io/bt/all.min.js"></script>
+  <link href="https://teinei.github.io/files/jo.css" rel="stylesheet">
+  
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        dark: 'black',
+        primary: 'aqua',
+        secondary: 'red',
+      },
+      fontFamily: {
+        // 名字統一：MyCustomFont
+        sans: ['MyCustomFont', 'sans-serif'],
+      },
+    }
+  }
+}
+</script>
+  
+
+  <!-- Primary Favicon -->
+    <link rel="icon" href="https://teinei.github.io/img/znnz-mono2-black.ico" type="image/x-icon">
+    
+    <!-- PNG version (recommended) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://teinei.github.io/img/znnz-mono2-black.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://teinei.github.io/img/znnz-mono2-black.png">
+    
+    <!-- Apple Touch Icon (for iPhone/iPad) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://teinei.github.io/img/znnz-mono2-white.png">
+
+    <link rel="icon" href="https://teinei.github.io/img/zn-mono2-knod2.0-black.svg" type="image/svg+xml">
+    
+    <!-- Optional: For newer browsers -->
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+<!-- in html css -->
+<style type="text/tailwindcss">
+
+.disabled-email {
+      color: #888888;
+      text-decoration: none;
+      cursor: not-allowed;
+      opacity: 0.6;
+      pointer-events: none;     /* This makes it NOT clickable */
+    }
+
+
+@layer base {
+  @font-face {
+    font-family: "MyCustomFont";
+    /* src: url("./HaloHandletter.otf") */
+    src: url("./Couture.otf")
+      format("opentype");
+      /* format ("woff");*/
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* 強制全站套用 */
+  body {
+    font-family: "MyCustomFont", sans-serif !important;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(90deg, #d400ff, #00f0ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bg-blur {
+    backdrop-filter: blur(8px);
+  }
+}
+</style>
+
+
+
+</head>
+<body class="bg-dark text-white font-sans">
+
+<!-- 导航栏（已修复移动端菜单） -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/70 bg-blur">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative">
+    <a href="#" class="text-2xl font-bold text-gradient">Bare Torsoed</a>
+
+    <!-- 桌面菜单 -->
+    <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
+      <a href="#tour" class="hover:text-primary transition">Tour</a>
+      <a href="#music" class="hover:text-primary transition">Music</a>
+      <a href="#merch" class="hover:text-primary transition">Merch</a>
+      <a href="#contact" class="hover:text-primary transition">Contact</a>
+      <a href="#tools" class="hover:text-primary transition">Tools</a>
+    </div>
+
+    <!-- 汉堡按钮 -->
+    <button id="menuBtn" class="md:hidden text-2xl">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- 移动端下拉菜单 -->
+    <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-black/95 py-6 px-4 flex flex-col gap-6 text-center text-sm uppercase tracking-widest">
+      <br>
+      <a href="#tour" class="hover:text-primary transition">Tour</a>
+      <a href="#music" class="hover:text-primary transition">Music</a>
+      <a href="#merch" class="hover:text-primary transition">Merch</a>
+      <a href="#contact" class="hover:text-primary transition">Contact</a>
+      <a href="#tools" class="hover:text-primary transition">Tools</a>
+
+<br>
+<br>
+<br>
+
+  <div class="max-w-6xl mx-auto px-4 text-center">
+  <!--p class="text-gray-500 text-sm">
+    teinei • Bare Torsoed • erhtar
+  </p-->
+    <div class="flex justify-center gap-6 text-2xl mb-6">
+      <a href="https://www.instagram.com/shirtlessjoh" class="hover:text-primary">
+        <i class="fa-brands fa-instagram"></i></a>
+      <a href="https://open.spotify.com/artist/2YGdPq0PXfkGLHBxGTLdyj" class="hover:text-primary">
+        <i class="fa-brands fa-spotify"></i></a>
+      <a href="https://youtube.com/@baretorso" class="hover:text-primary">
+        <i class="fa-brands fa-youtube"></i></a>
+      <a href="https://x.com/erhtar" class="hover:text-primary">
+        <i class="fa-brands fa-twitter"></i></a>
+      <a href="https://soundcloud.com/seikojo" class="hover:text-primary">
+        <i class="fa-brands fa-soundcloud"></i></a>
+  </div> <!-- close contacts font awesome --> 
+  </div> <!-- close out contacts div -->
+
+    
+
+
+
+    </div><!-- close mobile menu div -->
+  </div><!-- close relative class -->
+</nav>
+
+<!-- Hero 首屏 -->
+<!-- https://ibb.co/zhqNFs16 -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-[url('https://teinei.github.io/img/bigarm.png')] bg-cover bg-center opacity-90"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-dark"></div>
+  <div class="relative z-10 text-center px-4">
+    <h1 class="text-[clamp(3rem,10vw,7rem)] font-black text-gradient uppercase">Bare Torsoed</h1>
+    <p class="text-xl md:text-2xl mt-4 text-gray-300">Official Website • World Tour 2026</p>
+    <a href="#tour" class="inline-block mt-8 px-8 py-4 rounded-full border border-primary text-primary hover:bg-primary hover:text-black transition font-bold uppercase tracking-wider">
+      View Tour Dates
+    </a>
+  </div>
+</section>
+
+
+
+
+<!-- 巡演 Tour -->
+<section id="tour" class="py-24 px-4 max-w-6xl mx-auto">
+
+  <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-12 text-center uppercase">Online Tour 2026</h2>
+
+  <div class="space-y-4">
+    <div class="border border-gray-800 p-6 rounded-xl hover:border-primary transition flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <div class="text-primary font-bold">JUN 26, 2026</div>
+        <div class="text-xl font-semibold">
+
+New York, USA</div>
+        <div class="text-gray-400">
+
+X(Twitter) Live Concert</div>
+      </div>
+      <a href="#" class="px-6 py-3 bg-primary text-black rounded-full font-bold hover:opacity-80 transition">Get Tickets</a>
+    </div>
+    <div class="border border-gray-800 p-6 rounded-xl hover:border-primary transition flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <div class="text-primary font-bold">AUG 11, 2026</div>
+        <div class="text-xl font-semibold">
+
+London, UK</div>
+        <div class="text-gray-400">
+
+Instagram Live Show</div>
+      </div>
+      <a href="#" class="px-6 py-3 bg-primary text-black rounded-full font-bold hover:opacity-80 transition">Get Tickets</a>
+    </div>
+    <div class="border border-gray-800 p-6 rounded-xl hover:border-primary transition flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-center md:text-left">
+        <div class="text-primary font-bold">SEP 25, 2026</div>
+        <div class="text-xl font-semibold">
+
+Sydney, Australia</div>
+        <div class="text-gray-400">
+
+Youtube Go Live Performance</div>
+      </div>
+      <a href="#" class="px-6 py-3 bg-primary text-black rounded-full font-bold hover:opacity-80 transition">Get Tickets</a>
+    </div>
+  </div>
+</section>
+
+<!-- 音乐 Music -->
+<section id="music" class="py-24 px-4 bg-black/40">
+
+  <div class="max-w-6xl mx-auto">
+    <!-- music section name div -->
+    <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-12 text-center uppercase">Latest Music</h2>
+    <!-- music grid div -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- album 1 div -->
+      <div class="bg-dark p-6 rounded-xl border border-gray-800 hover:border-primary transition">
+        <!-- img div -->
+        <div class="aspect-square bg-gray-800 rounded-lg mb-4">
+          <img src="https://teinei.github.io/img/violin.jpg" />
+        </div>
+        <!-- album title -->
+        <h3 class="text-xl font-bold">
+            humor tune and squirrel
+        </h3>
+        <!-- album release date -->
+        <p class="text-gray-400">Released 2026</p>
+      </div>
+
+      <!-- album 2 div-->
+      <div class="bg-dark p-6 rounded-xl border border-gray-800 hover:border-primary transition">
+        <div class="aspect-square bg-gray-800 rounded-lg mb-4">
+          <!--
+          <img src="https://teinei.github.io/img/danbt.jpg" />
+          -->
+        </div>
+        <h3 class="text-xl font-bold"></h3>
+        <p class="text-gray-400"></p>
+      </div>
+
+      <!-- album 3 div -->
+      <div class="bg-dark p-6 rounded-xl border border-gray-800 hover:border-primary transition">
+        <div class="aspect-square bg-gray-800 rounded-lg mb-4">
+          <!--
+          <img src="https://teinei.github.io/img/corgi.jpg" />
+          -->
+        </div>
+        <h3 class="text-xl font-bold"></h3>
+        <p class="text-gray-400"></p>
+      </div><!-- close album 3 -->
+    </div><!-- close grid -->
+  </div><!-- close music section -->
+</section>
+
+
+
+<section id="tools" class="py-24 px-4 max-w-6xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-bold text-gradient mb-12 text-center uppercase">
+
+Tools
+
+</h2>
+
+<div class="text-xl font-semibold">
+
+<a href="https://teinei.github.io/files/hex2color.html" class="hover:text-primary">
+
+Hex color converter 
+
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- 周边 Merch -->
+<section id="merch" class="py-24 px-4 max-w-6xl mx-auto">
+  <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-12 text-center uppercase">Official Merch</h2>
+  <div class="grid md:grid-cols-4 gap-6">
+    <div class="bg-black/40 p-4 rounded-xl">
+      <div class="aspect-square bg-gray-800 rounded mb-3"></div>
+      <p class="font-semibold">Tour Tee</p>
+
+      <p class="text-primary">£45</p>
+
+    </div>
+    <div class="bg-black/40 p-4 rounded-xl">
+      <div class="aspect-square bg-gray-800 rounded mb-3"></div>
+      <p class="font-semibold">Hoodie</p>
+
+      <p class="text-primary">€85</p>
+
+    </div>
+    <div class="bg-black/40 p-4 rounded-xl">
+      <div class="aspect-square bg-gray-800 rounded mb-3"></div>
+      <p class="font-semibold">Cap</p>
+
+      <p class="text-primary">₮350</p>
+
+    </div>
+    <div class="bg-black/40 p-4 rounded-xl">
+      <div class="aspect-square bg-gray-800 rounded mb-3"></div>
+      <p class="font-semibold">Poster</p>
+
+      <p class="text-primary">₩2500</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer id="contact" class="py-12 bg-black border-t border-gray-800">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <div class="flex justify-center gap-6 text-2xl mb-6">
+
+      <a href="https://www.instagram.com/shirtlessjoh" class="hover:text-primary"><i class="fa-brands fa-instagram"></i></a>
+
+      <a href="https://open.spotify.com/artist/1Oc81e1ZcAI4wQ9UEwo9Z5" class="hover:text-primary"><i class="fa-brands fa-spotify"></i></a>
+
+      <a href="https://youtube.com/@baretorso" class="hover:text-primary">
+<i class="fa-brands fa-youtube"></i></a>
+
+      <a href="https://x.com/erhtar" class="hover:text-primary"><i class="fa-brands fa-twitter"></i></a>
+
+      <a href="https://soundcloud.com/seikojo" class="hover:text-primary">
+        <i class="fa-brands fa-soundcloud"></i></a>
+    </div>
+    <p class="disabled-email text-gray-500 text-sm">
+      e-mail: teinei@yahoo.com
+    </p>
+    <p class="text-gray-500 text-sm">© 2026 Bare Torsoed. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- 移动端菜单JS（核心修复） -->
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuLinks = mobileMenu.querySelectorAll('a');
+
+// 切换显示/隐藏
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  // 切换图标 汉堡/关闭
+  const icon = menuBtn.querySelector('i');
+  icon.classList.toggle('fa-bars');
+  icon.classList.toggle('fa-times');
+});
+
+// 点击导航链接自动关闭菜单
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    const icon = menuBtn.querySelector('i');
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  });
+});
+</script>
+
+</body>
+</html>
