@@ -3,8 +3,8 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        dark: 'maroon',
-        primary: 'crimson',
+        dark: 'crimson',
+        primary: 'aqua',
         secondary: 'teal',
       },
       fontFamily: {
