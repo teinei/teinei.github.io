@@ -1,9 +1,9 @@
-//
+//bg color, high light color 
 tailwind.config = {
   theme: {
     extend: {
       colors: {
-        dark: 'teal',
+        dark: 'black',
         primary: 'crimson',
         secondary: 'teal',
       },
